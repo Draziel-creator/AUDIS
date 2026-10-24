@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Custom theme color definitions */
+  body.theme-dark {
+    --bg-main: #09090b;
+    --card-bg: #18181b;
+    --border-color: #27272a;
+    --accent-color: #3b82f6;
+  }
+  body.theme-light {
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --accent-color: #2563eb;
+    color: #0f172a;
+  }
+  body.theme-blue {
+    --bg-main: #030712;
+    --card-bg: #0f172a;
+    --border-color: #1e293b;
+    --accent-color: #38bdf8;
+  }
+  body.theme-crimson {
+    --bg-main: #140507;
+    --card-bg: #270c10;
+    --border-color: #431418;
+    --accent-color: #f43f5e;
+  }
+  body.theme-violet {
+    --bg-main: #0c0517;
+    --card-bg: #1b0e30;
+    --border-color: #311854;
+    --accent-color: #a855f7;
+  }
+}
+
+/* Hide scrollbars for slick mobile look while keeping scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(18, 18, 22, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}

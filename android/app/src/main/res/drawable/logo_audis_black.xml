@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Minimalist Letter A flowing into infinity loop at bottom in black -->
+    <path
+        android:strokeColor="#09090b"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M24,6 C20,14 15,24 11,31 C8,36 8,41 14,41 C20,41 23,35 24,33 C25,35 28,41 34,41 C40,41 40,36 37,31 C33,24 28,14 24,6 Z" />
+    <path
+        android:strokeColor="#09090b"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M16.5,24 C19,22.5 29,22.5 31.5,24" />
+    <path
+        android:fillColor="#09090b"
+        android:pathData="M24,32 a1.5,1.5 0 1,0 0.001,0" />
+</vector>

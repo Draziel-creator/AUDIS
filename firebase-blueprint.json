@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile in AUDIS Goma student marketplace",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "isPremium": { "type": "boolean" },
+        "followers": { "type": "array" },
+        "following": { "type": "array" },
+        "bio": { "type": "string" },
+        "campus": { "type": "string" },
+        "faculty": { "type": "string" },
+        "phone": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "displayName", "email", "isPremium"]
+    },
+    "Service": {
+      "title": "Service",
+      "description": "Student service or product listing in AUDIS",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "type": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "status": { "type": "string" },
+        "deadline": { "type": "string" },
+        "likes": { "type": "number" },
+        "ownerName": { "type": "string" },
+        "ownerPhoto": { "type": "string" },
+        "ownerIsPremium": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["ownerId", "title", "description", "category", "price", "status"]
+    },
+    "Favorite": {
+      "title": "Favorite",
+      "description": "Favorite bookmark by a student",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "serviceId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "serviceId"]
+    },
+    "Chat": {
+      "title": "Chat",
+      "description": "Direct conversation between two students",
+      "type": "object",
+      "properties": {
+        "participants": { "type": "array" },
+        "lastMessage": { "type": "string" },
+        "lastSenderId": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["participants"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "A single chat message in a conversation",
+      "type": "object",
+      "properties": {
+        "senderId": { "type": "string" },
+        "text": { "type": "string" },
+        "read": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["senderId", "text"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Student user profiles"
+    },
+    "/services/{serviceId}": {
+      "schema": "Service",
+      "description": "Listings of services and products by students"
+    },
+    "/favorites/{favoriteId}": {
+      "schema": "Favorite",
+      "description": "User favorite services mappings"
+    },
+    "/chats/{chatId}": {
+      "schema": "Chat",
+      "description": "One-on-one conversation between two students"
+    },
+    "/chats/{chatId}/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Messages sent inside a conversation"
+    }
+  }
+}

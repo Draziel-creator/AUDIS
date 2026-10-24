@@ -1,0 +1,6 @@
+{
+  "name": "AUDIS - Marketplace Étudiante Université de Goma",
+  "description": "Place de marché de services et produits pour les étudiants de l'Université de Goma (UNIGOM, ULPGL). Devoirs, saisie, impression, design, dépannage et matériel étudiant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
